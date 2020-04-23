@@ -43,7 +43,7 @@ resource "azurerm_windows_virtual_machine" "jumpBoxVM" {
     storage_account_type = "Premium_LRS"
   }
 
-    source_image_reference {
+  source_image_reference {
     publisher = "MicrosoftWindowsServer"
     offer     = "WindowsServer"
     sku       = var.vmSKU
