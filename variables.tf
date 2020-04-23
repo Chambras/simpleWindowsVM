@@ -28,12 +28,6 @@ variable "vmRGName" {
   description = "RG where all the VMs are going to be created."
 }
 
-variable "saName" {
-  type        = string
-  default     = "mzvtestenv"
-  description = "Main Storage Account."
-}
-
 variable "tags" {
   type = map
   default = {

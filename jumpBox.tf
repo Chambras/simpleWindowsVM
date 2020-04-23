@@ -43,30 +43,16 @@ resource "azurerm_windows_virtual_machine" "jumpBoxVM" {
     storage_account_type = "Premium_LRS"
   }
 
-  source_image_reference {
+    source_image_reference {
     publisher = "MicrosoftWindowsServer"
     offer     = "WindowsServer"
-    sku       = "2016-Datacenter"
+    sku       = var.vmSKU
     version   = "latest"
   }
 
   boot_diagnostics {
     storage_account_uri = data.azurerm_storage_account.genericSA.primary_blob_endpoint
   }
-
-  # storage_image_reference {
-  #   publisher = "MicrosoftWindowsServer"
-  #   offer     = "WindowsServer"
-  #   sku       = "2012-R2-Datacenter"
-  #   version   = "latest"
-  # }
-
-  # storage_os_disk {
-  #   name              = "${var.suffix}Windows${var.jumpBoxVMName}OSdisk1"
-  #   caching           = "ReadWrite"
-  #   create_option     = "FromImage"
-  #   managed_disk_type = "Standard_LRS"
-  # }
 
   tags = var.tags
 }

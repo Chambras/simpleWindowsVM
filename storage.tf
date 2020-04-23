@@ -10,6 +10,6 @@
 # }
 
 data "azurerm_storage_account" "genericSA" {
-  name                = var.saName
+  name                = var.storageAccountName
   resource_group_name = var.mainRGName
 }

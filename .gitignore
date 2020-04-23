@@ -29,3 +29,6 @@ override.tf.json
 *plan*
 *.plan*
 run.plan
+
+# Internal notes
+INTERNAL.md
